@@ -1,0 +1,5 @@
+# Elixir and erlang, pnpm versions listed in .tools-versions, Dockerfile, Dockerfile.ex.test, Dockerfile.js.test
+nodejs 16.14.0
+erlang 25.1.2
+elixir 1.14.3-otp-25
+pnpm 7.22.0
