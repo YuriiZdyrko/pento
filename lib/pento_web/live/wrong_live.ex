@@ -37,7 +37,7 @@ defmodule PentoWeb.WrongLive do
     </h2>
     <button phx-click="refreshtime">Refresh time</button>
     <pre>
-      <%= @current_user.email %>
+      <%= @current_user.username %>
       <%= @session_id %>
     </pre>
     """
