@@ -14,6 +14,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Name with link</th>
       <th> description</th>
       <th>Unit price</th>
       <th>Sku</th>
@@ -25,6 +26,8 @@
     <%= for product <- @products do %>
       <tr id={"product-#{product.id}"}>
         <td><%= product.name %></td>
+        <td><%= live_redirect "Show", to: Routes.product_show_path(@socket, :show, product), class: "link" %></td>
+
         <td><%= product.description %></td>
         <td><%= product.unit_price %></td>
         <td><%= product.sku %></td>
@@ -34,7 +37,7 @@
           - Which route gets invoked when you click the link on the Index page to view a given product?
           The "Show" link uses live_redirect (redirection to different :live_view)
           -->
-          <span><%= live_redirect "Show", to: Routes.product_show_path(@socket, :show, product) %></span>
+          <!-- <span><%= live_redirect "Show", to: Routes.product_show_path(@socket, :show, product) %></span> -->
           <span><%= live_patch "Edit", to: Routes.product_index_path(@socket, :edit, product) %></span>
           <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: product.id, data: [confirm: "Are you sure?"] %></span>
         </td>
