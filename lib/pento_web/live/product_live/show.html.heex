@@ -1,5 +1,12 @@
 <h1>Show Product</h1>
 
+<!--
+How does the ProductLive.Show template render the Product Edit form and what events does that form support?
+- it's using live_modal helper to dynamically render form with
+live_component(PentoWeb.ModalComponent, modal_opts)
+- that form supports "validate" and "save" events
+-->
+
 <%= if @live_action in [:edit] do %>
   <%= live_modal PentoWeb.ProductLive.FormComponent,
     id: @product.id,
@@ -8,6 +15,8 @@
     product: @product,
     return_to: Routes.product_show_path(@socket, :show, @product) %>
 <% end %>
+
+<%= @my_message %>
 
 <ul>
 

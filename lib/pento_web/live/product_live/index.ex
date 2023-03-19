@@ -30,6 +30,7 @@ defmodule PentoWeb.ProductLive.Index do
     socket
     |> assign(:page_title, "Listing Products")
     |> assign(:product, nil)
+    |> assign(:greeting, "Welcome to Pento!")
   end
 
   @impl true
