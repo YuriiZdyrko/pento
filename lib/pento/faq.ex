@@ -101,4 +101,10 @@ defmodule Pento.FAQ do
   def change_question(%Question{} = question, attrs \\ %{}) do
     Question.changeset(question, attrs)
   end
+
+  def upvote_question(%Question{} = question) do
+    question
+    |> Question.upvote_query()
+    |> Repo.update_all([])
+  end
 end
