@@ -52,8 +52,8 @@ defmodule PentoWeb.PromoLive do
     else
       {:ok, _} ->
         {:noreply,
-        socket
-        |> put_flash(:info, "Promo updated successfully")}
+         socket
+         |> put_flash(:info, "Promo updated successfully")}
     end
   end
 end
