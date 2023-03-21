@@ -36,6 +36,11 @@ defmodule PentoWeb.ProductLive.FormComponent do
     save_product(socket, socket.assigns.action, product_params)
   end
 
+  @impl true
+  def handle_event("cancel-upload", %{"ref" => ref}, socket) do
+    {:noreply, cancel_upload(socket, :image, ref)}
+  end
+
   defp save_product(socket, :edit, params) do
     case Catalog.update_product(socket.assigns.product, product_params(socket, params)) do
       {:ok, _product} ->
