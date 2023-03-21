@@ -1,0 +1,21 @@
+<h2>Search Catalog</h2>
+
+<div>
+    <.form
+    let={f}
+    for={@changeset}
+    id="search-form"
+    phx-change="validate"
+    phx-submit="search">
+        <%= label f, :sku %>
+        <%= number_input f, :sku %>
+        <%= error_tag f, :sku %>
+        <%= submit "Search", phx_disable_with: "Searching..." %>
+    </.form>
+
+    <ul>
+        <%= for product <- @products do %>
+            <li><%= product.description %> - <%= product.sku %></li>
+        <% end %>
+    </ul>
+</div>
