@@ -5,6 +5,7 @@ defmodule PentoWeb.SurveyLive do
   alias PentoWeb.DemographicLive
   alias PentoWeb.HomeworkLive
   alias Pento.Survey
+  alias PentoWeb.DemographicLive.Form
 
   def mount(_params, _session, socket) do
     {:ok,
@@ -18,5 +19,15 @@ defmodule PentoWeb.SurveyLive do
       :demographic,
       Survey.get_demographic_by_user(current_user)
     )
+  end
+
+  def handle_info({:created_demographic, demographic}, socket) do
+    {:noreply, handle_demographic_created(socket, demographic)}
+  end
+
+  def handle_demographic_created(socket, demographic) do
+    socket
+    |> put_flash(:info, "Demographic created successfully")
+    |> assign(:demographic, demographic)
   end
 end
