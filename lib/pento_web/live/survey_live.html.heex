@@ -1,8 +1,17 @@
 <HomeworkLive.Header.details>
-  Homework header
+  Homework
 </HomeworkLive.Header.details>
 <HomeworkLive.List.details items={~w(one two three)} />
+<.live_component
+    module={HomeworkLive.VisibilityToggle}
+    id="visibility-toggle"
+>
+<i>hide me!</i>
+</.live_component>
 
+<HomeworkLive.Header.details>
+  Survey
+</HomeworkLive.Header.details>
 <section class="row">
     <Component.hero content="Hello from a Function Component">
         <div>Hello from a Function Component's Slot</div>
