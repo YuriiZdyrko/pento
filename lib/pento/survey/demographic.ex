@@ -2,6 +2,8 @@ defmodule Pento.Survey.Demographic do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Pento.Accounts.User
+
   schema "demographics" do
     field :year_of_birth, :integer
     field :gender, :string
